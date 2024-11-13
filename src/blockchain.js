@@ -157,6 +157,8 @@ class Blockchain {
   }
 }
 
+module.exports = {Transaction, Block, Blockchain};
+
 const minersKey = ec.keyFromPrivate(keys.minersPrivate);
 const minersWallet = minersKey.getPublic('hex');
 
