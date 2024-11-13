@@ -19,14 +19,18 @@ class Block {
     while (this.hash.substring(0, difficulty) !== difficultyPrefix) {
       this.nonce++;
       this.hash = this.generateHash();
+
+      console.log(`Mining... Nonce: ${this.nonce} Hash: ${this.hash}`);
     }
+    console.log();
+    console.log(`Block mined: ${this.hash}`);
   }
 }
 
 class Blockchain {
   constructor() {
     this.chain = [new Block(Date.now(), [])];
-    this.difficulty = 3;
+    this.difficulty = 5;
   }
 
   getLastBlock() {
