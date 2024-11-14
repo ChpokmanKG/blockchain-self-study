@@ -24,7 +24,8 @@ describe('Transaction', function() {
   it('should generate a valid hash', function() {
     const tx = new Transaction(wallet, 'some_address', 50, 5);
     const hash = tx.generateHash();
-    assert.strictEqual(hash, generateHash(tx.timestamp + wallet + 'some_address' + 50));
+    console.log(generateHash(tx.timestamp + wallet + 'some_address' + 50));
+    assert.strictEqual(hash, generateHash(tx.timestamp + wallet + 'some_address' + 50 + 5));
   });
 
   it('should sign the transaction', function() {

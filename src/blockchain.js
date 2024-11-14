@@ -13,7 +13,7 @@ class Transaction {
   }
 
   generateHash() {
-    return generateHash(this.timestamp + this.from + this.to + this.amount);
+    return generateHash(this.timestamp + this.from + this.to + this.amount + this.fee);
   }
 
   sign(key) {
